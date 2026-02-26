@@ -65,22 +65,22 @@ function OccasionsSection() {
     {
       title: 'Content Creation',
       copy: 'Put a real car in the frame and your content levels up instantly.',
-      image: '/src/Images/occassions/Screenshot_20260225_204104_Instagram.jpg'
+      image: '/images/occassions/Screenshot_20260225_204104_Instagram.jpg'
     },
     {
       title: 'Weddings',
       copy: 'The arrival, the photos, the getaway, make it part of the memory.',
-      image: '/src/Images/occassions/Screenshot_20260225_204025_Instagram.jpg'
+      image: '/images/occassions/Screenshot_20260225_204025_Instagram.jpg'
     },
     {
       title: 'Visiting Vegas',
       copy: 'You\'re already in the city that flexes. Don\'t show up in a rental Camry.',
-      image: '/src/Images/occassions/Screenshot_20260225_204209_Instagram.jpg'
+      image: '/images/occassions/Screenshot_20260225_204209_Instagram.jpg'
     },
     {
       title: 'For The Experience',
       copy: 'Red Rock roads. Strip nights. No excuse needed.',
-      image: '/src/Images/occassions/Screenshot_20260225_204125_Instagram.jpg'
+      image: '/images/occassions/Screenshot_20260225_204125_Instagram.jpg'
     }
   ];
 
@@ -124,10 +124,10 @@ function VehicleCardsSection() {
     {
       name: 'Blacked Out Lamborghini Urus',
       images: [
-        '/src/Images/Urus/Screenshot_20260225_202332_Instagram.jpg',
-        '/src/Images/Urus/Screenshot_20260225_202350_Instagram.jpg',
-        '/src/Images/Urus/Screenshot_20260225_202404_Instagram.jpg',
-        '/src/Images/Urus/Screenshot_20260225_202431_Instagram.jpg'
+        '/images/Urus/Screenshot_20260225_202332_Instagram.jpg',
+        '/images/Urus/Screenshot_20260225_202350_Instagram.jpg',
+        '/images/Urus/Screenshot_20260225_202404_Instagram.jpg',
+        '/images/Urus/Screenshot_20260225_202431_Instagram.jpg'
       ],
       specs: [
         { icon: Users, label: 'Seats: 5' },
@@ -139,10 +139,10 @@ function VehicleCardsSection() {
     {
       name: 'C8 Corvette',
       images: [
-        '/src/Images/Corvette/Screenshot_20260225_202445_Instagram.jpg',
-        '/src/Images/Corvette/Screenshot_20260225_202451_Instagram.jpg',
-        '/src/Images/Corvette/Screenshot_20260225_202458_Instagram.jpg',
-        '/src/Images/Corvette/Screenshot_20260225_202513_Instagram.jpg'
+        '/images/Corvette/Screenshot_20260225_202445_Instagram.jpg',
+        '/images/Corvette/Screenshot_20260225_202451_Instagram.jpg',
+        '/images/Corvette/Screenshot_20260225_202458_Instagram.jpg',
+        '/images/Corvette/Screenshot_20260225_202513_Instagram.jpg'
       ],
       specs: [
         { icon: Users, label: 'Seats: 2' },
@@ -154,11 +154,11 @@ function VehicleCardsSection() {
     {
       name: 'Porsche 911 GT3RS',
       images: [
-        '/src/Images/Porsche/Screenshot_20260225_202523_Instagram.jpg',
-        '/src/Images/Porsche/Screenshot_20260225_202550_Instagram.jpg',
-        '/src/Images/Porsche/Screenshot_20260225_202557_Instagram.jpg',
-        '/src/Images/Porsche/Screenshot_20260225_202610_Instagram.jpg',
-        '/src/Images/Porsche/Screenshot_20260225_202618_Instagram.jpg'
+        '/images/Porsche/Screenshot_20260225_202523_Instagram.jpg',
+        '/images/Porsche/Screenshot_20260225_202550_Instagram.jpg',
+        '/images/Porsche/Screenshot_20260225_202557_Instagram.jpg',
+        '/images/Porsche/Screenshot_20260225_202610_Instagram.jpg',
+        '/images/Porsche/Screenshot_20260225_202618_Instagram.jpg'
       ],
       specs: [
         { icon: Users, label: 'Seats: 2' },
