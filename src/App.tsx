@@ -100,6 +100,11 @@ function OccasionsSection() {
               src={occasion.image}
               alt={occasion.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              onError={(e) => {
+                console.error('Failed to load image:', occasion.image);
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
@@ -209,6 +214,10 @@ function VehicleCard({ vehicle }: { vehicle: any }) {
           src={vehicle.images[currentImageIndex]}
           alt={vehicle.name}
           className="w-full h-full object-cover"
+          loading="lazy"
+          onError={(e) => {
+            console.error('Failed to load vehicle image:', vehicle.images[currentImageIndex]);
+          }}
         />
 
         <button
