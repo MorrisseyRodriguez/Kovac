@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Users, Zap, Gauge, ChevronLeft, ChevronRight, ChevronDown, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronDown, Star } from 'lucide-react';
 
 function App() {
   return (
@@ -8,7 +8,6 @@ function App() {
       <HeroSection />
       <OccasionsSection />
       <ReviewsSection />
-      <VehicleCardsSection />
     </div>
   );
 }
@@ -256,163 +255,6 @@ function ReviewsSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function VehicleCardsSection() {
-  const vehicles = [
-    {
-      name: 'Blacked Out Lamborghini Urus',
-      images: [
-        '/images/Urus/Screenshot_20260225_202332_Instagram.jpg',
-        '/images/Urus/Screenshot_20260225_202350_Instagram.jpg',
-        '/images/Urus/Screenshot_20260225_202404_Instagram.jpg',
-        '/images/Urus/Screenshot_20260225_202431_Instagram.jpg'
-      ],
-      specs: [
-        { icon: Users, label: 'Seats: 5' },
-        { icon: Gauge, label: 'Automatic' },
-        { icon: Zap, label: 'SUV' }
-      ],
-      price: '$899'
-    },
-    {
-      name: 'C8 Corvette',
-      images: [
-        '/images/Corvette/Screenshot_20260225_202445_Instagram.jpg',
-        '/images/Corvette/Screenshot_20260225_202451_Instagram.jpg',
-        '/images/Corvette/Screenshot_20260225_202458_Instagram.jpg',
-        '/images/Corvette/Screenshot_20260225_202513_Instagram.jpg'
-      ],
-      specs: [
-        { icon: Users, label: 'Seats: 2' },
-        { icon: Zap, label: '0–60: 2.9s' },
-        { icon: Gauge, label: 'Automatic' }
-      ],
-      price: '$599'
-    },
-    {
-      name: 'Porsche 911 GT3RS',
-      images: [
-        '/images/Porsche/Screenshot_20260225_202523_Instagram.jpg',
-        '/images/Porsche/Screenshot_20260225_202550_Instagram.jpg',
-        '/images/Porsche/Screenshot_20260225_202557_Instagram.jpg',
-        '/images/Porsche/Screenshot_20260225_202610_Instagram.jpg',
-        '/images/Porsche/Screenshot_20260225_202618_Instagram.jpg'
-      ],
-      specs: [
-        { icon: Users, label: 'Seats: 2' },
-        { icon: Zap, label: '0–60: 3.0s' },
-        { icon: Gauge, label: 'Automatic' }
-      ],
-      price: '$799'
-    }
-  ];
-
-  return (
-    <section className="py-24 px-4 bg-zinc-950">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Fleet
-          </h2>
-          <p className="text-xl text-gray-400">
-            Available for Pick-up and Delivery Now
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {vehicles.map((vehicle, index) => (
-            <VehicleCard key={index} vehicle={vehicle} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function VehicleCard({ vehicle }: { vehicle: any }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % vehicle.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + vehicle.images.length) % vehicle.images.length);
-  };
-
-  return (
-    <div className="bg-zinc-900 rounded-lg overflow-hidden shadow-2xl hover:shadow-red-600/20 transition-all duration-300">
-      <div className="relative h-64 overflow-hidden group">
-        <img
-          src={vehicle.images[currentImageIndex]}
-          alt={vehicle.name}
-          className="w-full h-full object-cover"
-          loading="lazy"
-          onError={(e) => {
-            console.error('Failed to load vehicle image:', vehicle.images[currentImageIndex]);
-          }}
-        />
-
-        <button
-          onClick={prevImage}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          aria-label="Previous image"
-        >
-          <ChevronLeft size={20} />
-        </button>
-
-        <button
-          onClick={nextImage}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          aria-label="Next image"
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {vehicle.images.map((_: any, index: number) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentImageIndex
-                  ? 'bg-red-600 w-6'
-                  : 'bg-white/50 hover:bg-white/80'
-              }`}
-              aria-label={`Go to image ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-white mb-4">
-          {vehicle.name}
-        </h3>
-
-        <div className="space-y-2 mb-6">
-          {vehicle.specs.map((spec: any, specIndex: number) => (
-            <div key={specIndex} className="flex items-center gap-2 text-gray-300">
-              <spec.icon size={18} className="text-red-500" />
-              <span className="text-sm">{spec.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-6">
-          <p className="text-gray-400 text-sm mb-1">Start from</p>
-          <p className="text-3xl font-bold text-white">
-            {vehicle.price} <span className="text-lg text-gray-400">per day</span>
-          </p>
-        </div>
-
-        <button className="w-full py-4 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition-colors duration-300">
-          Book Now
-        </button>
-      </div>
-    </div>
   );
 }
 
